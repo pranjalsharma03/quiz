@@ -1,0 +1,70 @@
+{
+  "name": "Quiz-Yaar",
+  "version": "1.1.0",
+  "private": true,
+  "homepage": "https://akhilchaudhary.in/",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.12",
+    "@types/react": "16.9.23",
+    "chart.js": "2.9.3",
+    "classnames": "2.2.6",
+    "emailjs-com": "^3.2.0",
+    "firebase": "^7.22.0",
+    "firebase-admin": "^9.4.1",
+    "generate-otp": "^1.0.6",
+    "history": "4.10.1",
+    "iplocation": "^7.2.0",
+    "node-sass": "4.13.1",
+    "perfect-scrollbar": "1.5.0",
+    "prop-types": "15.7.2",
+    "react": "16.13.0",
+    "react-chartjs-2": "2.9.0",
+    "react-csv": "^2.0.3",
+    "react-dom": "16.13.0",
+    "react-fullscreen-crossbrowser": "^1.1.0",
+    "react-google-maps": "9.4.5",
+    "react-iframe": "^1.8.0",
+    "react-loading": "^2.0.3",
+    "react-loading-overlay": "^1.0.1",
+    "react-lottie": "^1.2.3",
+    "react-notification-alert": "0.0.12",
+    "react-papaparse": "^3.16.1",
+    "react-router-dom": "5.1.2",
+    "react-scripts": "3.4.0",
+    "react-share": "^4.4.0",
+    "reactstrap": "8.4.1",
+    "uuid": "^8.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && gulp licenses",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "compile-scss": "node-sass src/assets/scss/black-dashboard-react.scss src/assets/css/black-dashboard-react.css",
+    "minify-sass": "node-sass src/assets/scss/black-dashboard-react.scss src/assets/css/black-dashboard-react.min.css --output-style compressed",
+    "map-sass": "node-sass src/assets/scss/black-dashboard-react.scss src/assets/css/black-dashboard-react.css --source-map true"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "optionalDependencies": {
+    "@types/googlemaps": "3.39.3",
+    "@types/markerclustererplus": "2.1.33",
+    "eslint-plugin-flowtype": "3.13.0",
+    "typescript": "3.8.3"
+  },
+  "devDependencies": {
+    "gulp": "4.0.2",
+    "gulp-append-prepend": "1.0.8"
+  }
+}
