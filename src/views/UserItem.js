@@ -21,7 +21,7 @@ const QuestionItem = (props) => {
       .database()
       .ref()
       .child(
-        "Quiz/" + props.id + "/Users/" + props.main.email.replace(".", ")")
+        "Quiz/" + props.id + "/Users/" + props.main.email.replaceAll(".", ")")
       );
     UserRef.update({
       Status: "Logged",

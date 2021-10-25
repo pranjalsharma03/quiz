@@ -219,15 +219,15 @@ class Proctor extends React.Component {
       if (
         typeof this.state.users === "undefined" ||
         !this.state.users.hasOwnProperty(
-          this.state.userEmail.replace(".", ")")
+          this.state.userEmail.replaceAll(".", ")")
         ) ||
-        this.state.users[this.state.userEmail.replace(".", ")")].Status ===
+        this.state.users[this.state.userEmail.replaceAll(".", ")")].Status ===
           "Logged"
       ) {
         await firebase
           .database()
           .ref("Quiz/" + id + "/Users/")
-          .child(this.state.userEmail.replace(".", ")"))
+          .child(this.state.userEmail.replaceAll(".", ")"))
           .update({
             Status: "Logged",
             email: this.state.userEmail,
@@ -252,7 +252,7 @@ class Proctor extends React.Component {
     await firebase
       .database()
       .ref("Quiz/" + id + "/Users/")
-      .child(this.state.userEmail.replace(".", ")"))
+      .child(this.state.userEmail.replaceAll(".", ")"))
       .update({
         Score: this.state.Score,
         Status: "Completed",
@@ -265,7 +265,7 @@ class Proctor extends React.Component {
     await firebase
       .database()
       .ref("Quiz/" + id + "/Users/")
-      .child(this.state.userEmail.replace(".", ")"))
+      .child(this.state.userEmail.replaceAll(".", ")"))
       .update({
         Score: this.state.Score,
         Status: "Disqualified",
@@ -372,7 +372,7 @@ class Proctor extends React.Component {
             "/auth/completed/" +
             id +
             "/" +
-            this.state.userEmail.replace(".", ")")
+            this.state.userEmail.replaceAll(".", ")")
           }
         />
       );
@@ -393,7 +393,7 @@ class Proctor extends React.Component {
               "/auth/completed/" +
               id +
               "/" +
-              this.state.userEmail.replace(".", ")")
+              this.state.userEmail.replaceAll(".", ")")
             }
           />
         );
