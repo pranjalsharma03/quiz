@@ -64,7 +64,7 @@ class Completed extends React.Component {
     id = this.props.match.params.id;
     user = this.props.match.params.user;
     await fetch(
-      "https://quizyaar-default-rtdb.firebaseio.com/Quiz/" +
+      "https://quiz-c74b2-default-rtdb.firebaseio.com/Quiz/" +
         id +
         "/Users/" +
         user +

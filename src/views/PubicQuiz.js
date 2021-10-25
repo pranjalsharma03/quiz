@@ -82,7 +82,7 @@ class PublicQuiz extends React.Component {
       );
       window.$notification = false;
     }
-    await fetch("https://quizyaar-default-rtdb.firebaseio.com/Quiz.json")
+    await fetch("https://quiz-c74b2-default-rtdb.firebaseio.com/Quiz.json")
       .then((res) => res.json())
       .then((data) => {
         for (let eachData in data) {

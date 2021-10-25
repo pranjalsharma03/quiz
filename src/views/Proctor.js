@@ -73,7 +73,7 @@ class Proctor extends React.Component {
     answers = [];
     id = this.props.match.params.id;
     await fetch(
-      "https://quizyaar-default-rtdb.firebaseio.com/Quiz/" + id + ".json"
+      "https://quiz-c74b2-default-rtdb.firebaseio.com/Quiz/" + id + ".json"
     )
       .then((res) => res.json())
       .then((data) => (tmp = data));
