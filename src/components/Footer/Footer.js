@@ -15,10 +15,10 @@ class Footer extends React.Component {
             © {new Date().getFullYear()} made with{" "}
             <i className="tim-icons icon-heart-2" /> by{" "}
             <a
-              href="https://akhilchaudhary.in/"
+              href="https://www.linkedin.com/in/pranjal-sharma-79aa4019b/"
               target="_blank"
             >
-              Akhil Chaudhary
+              Pranjal&sagar
             </a>
           </div>
         </Container>
