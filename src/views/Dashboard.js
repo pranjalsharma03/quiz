@@ -486,7 +486,7 @@ class Dashboard extends React.Component {
                         <th className="text-center">Salary</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody> 
                       <tr>
                         <td>Dakota Rice</td>
                         <td>Niger</td>
