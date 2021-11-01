@@ -9,7 +9,7 @@ import {
 // nodejs library that concatenates classes
 import classNames from "classnames";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../logo.png";
+import logo from "../../logo.jpeg";
 
 // reactstrap components
 import {
