@@ -1,4 +1,4 @@
-# Quiz Yaar ![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
+# Quiz Yaar ![Awesome]()
 
 <br />
 <p align="center">
@@ -10,7 +10,7 @@
 
 ## Official website for registration and tips on how to get started
 
-- [Quiz Yaar Official Website](https://quiz-yaar.vercel.app/)
+- [Quiz Yaar Official Website](https://quiz-phi-ten.vercel.app/auth/home)
 
 # Table of Contents
 - [Quiz Yaar !Awesome](#quiz-yaar-)
@@ -96,14 +96,14 @@ These instructions will get you a copy of the project up and running on your loc
 ###### We’ll use the git clone command along with the URL that points to your fork of the repository.
 ###### This URL will be similar to the URL above, except now it will end with .git. In the example above, the URL will look like this:
 
-https://github.com/Akhil-chaudhary/quiz-yaar.git
+https://github.com/pranjalsharma03/quiz
 
 ###### You can alternatively copy the URL by using the green “Clone or download” button from your repository page that you just forked from the original repository page. Once you click the button, you’ll be able to copy the URL by clicking the binder button next to the URL:
 ![](https://i.ibb.co/zb6JnJN/clone.jpg)
 
 ###### Once we have the URL, we’re ready to clone the repository. To do this, we’ll combine the git clone command with the repository URL from the command line in a terminal window:
 ```
-git clone https://github.com/Akhil-chaudhary/quiz-yaar.git
+git clone https://github.com/pranjalsharma03/quiz.git
 ```
 
 ### 3. Create New Branch
@@ -135,7 +135,7 @@ git push --set-upstream origin new-branch
 ### 6. Configure a Remote for the Fork
 ###### You’ll have to specify a new remote upstream repository for us to sync with the fork. This will be the original repository that you forked from. you’ll have to do this with the git remote add command.
 ```
-git remote add upstream https://github.com/Akhil-chaudhary/quiz-yaar
+git remote add upstream https://github.com/pranjalsharma03/quiz.git
 ```
 ###### In this example, // upstream // is the shortname we have supplied for the remote repository since in terms of Git, “upstream” refers to the repository that you cloned from. If you want to add a remote pointer to the repository of a collaborator, you may want to provide that collaborator’s username or a shortened nickname for the shortname.
 
@@ -176,17 +176,17 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Author
 
-* [Akhil Chaudhary](https://akhilchaudhary.in/)
+* [Pranjal & Sagar](https://twitter.com/pranjal_y2j)
 
 ## Connect with me
 <div align="center">
-<a href="https://github.com/Akhil-chaudhary/" target="_blank">
+<a href="https://github.com/pranjalsharma03" target="_blank">
 <img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 5px;" />
 </a>
-<a href="https://www.linkedin.com/in/akhil-chaudhary-0478a1187/" target="_blank">
+<a href="https://www.linkedin.com/in/pranjal-sharma-79aa4019b" target="_blank">
 <img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=linkedin style="margin-bottom: 5px;" />
 </a>
-<a href="https://www.facebook.com/AkhilChaudhary8181022104" target="_blank">
+<a href="https://www.facebook.com/profile.php?id=100006563564390" target="_blank">
 <img src=https://img.shields.io/badge/facebook-%232E87FB.svg?&style=for-the-badge&logo=facebook&logoColor=white alt=facebook style="margin-bottom: 5px;" />
 </a>
 <a href="https://www.instagram.com/akhilchaudhary.js/" target="_blank">
