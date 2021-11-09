@@ -31,7 +31,7 @@ class Proctor extends React.Component {
     this.state = {
       otp: "",
       userOtp: "",
-      otpTimer: 30,
+      otpTimer: 60,
       getOtp: false,
       Score: 0,
       rotate: true,
