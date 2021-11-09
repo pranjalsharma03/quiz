@@ -195,7 +195,7 @@ class Proctor extends React.Component {
           .then(
             (result) => {
               // console.log(result.text);
-              this.setState({ otpTimer: 30, getOtp: true, otp: otp });
+              this.setState({ otpTimer: 60, getOtp: true, otp: otp });
               this.otpTimer();
               this.notify("tc", "OTP sent!", "success", "icon-check-2");
             },
