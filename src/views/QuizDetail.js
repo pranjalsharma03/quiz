@@ -245,7 +245,7 @@ class QuizDetail extends React.Component {
                     </FormGroup>
                   </Col>
                 </Row>
-                <Row>
+                {/* <Row>
                   <Col className="pr-md-1" md="6">
                     <FormGroup>
                       <label>A</label>
@@ -306,7 +306,7 @@ class QuizDetail extends React.Component {
                       />
                     </FormGroup>
                   </Col>
-                </Row>
+                </Row> */}
                 <Row>
                   <Col className="pr-md-1" md="1">
                     <FormGroup>
