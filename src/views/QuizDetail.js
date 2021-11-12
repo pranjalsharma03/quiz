@@ -191,10 +191,10 @@ class QuizDetail extends React.Component {
       const [modal, setModal] = useState(false);
       const [Question, setQuestion] = useState(props.main.Question);
       const [Answer, setAnswer] = useState(props.main.Answer);
-      const [A, setA] = useState(props.main.A);
-      const [B, setB] = useState(props.main.B);
-      const [C, setC] = useState(props.main.C);
-      const [D, setD] = useState(props.main.D);
+      const [A] = useState(props.main.A);
+      const [B] = useState(props.main.B);
+      const [C] = useState(props.main.C);
+      const [D] = useState(props.main.D);
       const toggle = () => setModal(!modal);
       const saveQuestion = async (e) => {
         if (this.state.Status === "Ongoing") {
