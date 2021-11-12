@@ -5,7 +5,7 @@ import animationData from "../developer.json";
 import { Link } from "react-router-dom";
 import Footer from "components/Footer/Footer.js";
 import NotificationAlert from "react-notification-alert";
-import logo from "../logo.png";
+import logo from "../logo.jpeg";
 import laptop from "../laptop.svg";
 // reactstrap components
 import {

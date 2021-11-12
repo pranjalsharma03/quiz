@@ -22,6 +22,7 @@ import {
 import { Redirect } from "react-router-dom";
 import Fullscreen from "react-fullscreen-crossbrowser";
 let tmp = {};
+let warn=3;
 let id;
 let answers = [];
 let timer = 0;
@@ -384,7 +385,16 @@ class Proctor extends React.Component {
     ) {
       // console.log("Full");
     } else {
-      if (!this.state.getEmail) {
+      if (!this.state.getEmail){
+        warn=-1;
+        this.notify(
+          "tc",
+          "This action is not allowed. Warnings left:"+warn,
+          "danger",
+          "icon-simple-remove"
+        );
+      }
+      if (!this.state.getEmail&& warn<=0) {
         this.disqualify();
         return (
           <Redirect

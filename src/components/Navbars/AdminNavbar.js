@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import classNames from "classnames";
 import firebase from "../../variables/config";
 import { Link } from "react-router-dom";
-import logo from "../../logo.png";
+import logo from "../../logo.jpeg";
 
 // reactstrap components
 import {

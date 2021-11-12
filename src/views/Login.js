@@ -6,7 +6,7 @@ import NotificationAlert from "react-notification-alert";
 import Lottie from "react-lottie";
 import animationData from "../cow.json";
 import ReactLoading from "react-loading";
-import logo from "../logo.png";
+import logo from "../logo.jpeg";
 import { Link } from "react-router-dom";
 // reactstrap components
 import {
