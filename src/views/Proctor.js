@@ -386,7 +386,8 @@ class Proctor extends React.Component {
       // console.log("Full");
     } else {
       if (!this.state.getEmail){
-        warn=-1;
+        warn-=1;
+        this.setState({screenFull:true});
         this.notify(
           "tc",
           "This action is not allowed. Warnings left:"+warn,
@@ -394,7 +395,7 @@ class Proctor extends React.Component {
           "icon-simple-remove"
         );
       }
-      if (!this.state.getEmail&& warn<=0) {
+      if (!this.state.getEmail && warn<=0) {
         this.disqualify();
         return (
           <Redirect
