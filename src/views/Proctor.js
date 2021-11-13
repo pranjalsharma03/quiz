@@ -22,7 +22,7 @@ import {
 import { Redirect } from "react-router-dom";
 import Fullscreen from "react-fullscreen-crossbrowser";
 let tmp = {};
-let warn=3;
+let warn = 3;
 let id;
 let answers = [];
 let timer = 0;
@@ -31,6 +31,7 @@ class Proctor extends React.Component {
     super();
     this.state = {
       otp: "",
+      desans: "",
       userOtp: "",
       otpTimer: 60,
       getOtp: false,
@@ -223,7 +224,7 @@ class Proctor extends React.Component {
           this.state.userEmail.replaceAll(".", ")")
         ) ||
         this.state.users[this.state.userEmail.replaceAll(".", ")")].Status ===
-          "Logged"
+        "Logged"
       ) {
         await firebase
           .database()
@@ -385,17 +386,17 @@ class Proctor extends React.Component {
     ) {
       // console.log("Full");
     } else {
-      if (!this.state.getEmail){
-        warn-=1;
-        this.setState({screenFull:true});
+      if (!this.state.getEmail) {
+        warn -= 1;
+        this.setState({ screenFull: true });
         this.notify(
           "tc",
-          "This action is not allowed. Warnings left:"+warn,
+          "This action is not allowed. Warnings left:" + warn,
           "danger",
           "icon-simple-remove"
         );
       }
-      if (!this.state.getEmail && warn<=0) {
+      if (!this.state.getEmail && warn <= 0) {
         this.disqualify();
         return (
           <Redirect
@@ -470,7 +471,7 @@ class Proctor extends React.Component {
                         <CardTitle
                           className={
                             this.state.getEmail ||
-                            this.state.timerType === "None"
+                              this.state.timerType === "None"
                               ? "text-right d-none"
                               : "text-right"
                           }
@@ -561,7 +562,25 @@ class Proctor extends React.Component {
                         }
                       </h3>
                       <Form className="mx-5" id="quiz-form">
-                        <FormGroup>
+                        <FormGroup className={this.state.questions[this.state.activeQuestion - 1]
+                          .Questype ? "" : "d-none"}>
+
+                          <Input
+                            cols="80"
+                            required
+                            rows="4"
+                            type="textarea"
+                            placeholder="Enter your answer here..."
+                            autoCompleteType="desans"
+                            placeholderTextColor="#000"
+                            autoCapitalize="none"
+                            onChange={(desans) =>
+                              this.setState({ desans: desans.target.value })
+                            }
+                          />
+                        </FormGroup>
+                        <FormGroup className={this.state.questions[this.state.activeQuestion - 1]
+                          .Questype ? "d-none" : ""} >
                           <Input
                             type="radio"
                             onChange={(e) => {
