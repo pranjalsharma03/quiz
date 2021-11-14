@@ -71,7 +71,7 @@ class AddQuiz extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Questype:false,
+      Questype: false,
       toggle: false,
       Ques: "",
       Answer: "_",
@@ -133,7 +133,10 @@ class AddQuiz extends React.Component {
   isNotEmpty(fields) {
     let fieldEmpty = false;
     for (let eachData in fields) {
-      if (typeof(fields[eachData].val)==="undefined"||fields[eachData].val.length === 0) {
+      if (
+        typeof fields[eachData].val === "undefined" ||
+        fields[eachData].val.length === 0
+      ) {
         fieldEmpty = true;
         this.notify(
           "tc",
@@ -225,7 +228,7 @@ class AddQuiz extends React.Component {
     let length = this.state.Question.length;
     this.state.Question.push({
       Question: this.state.Ques,
-      Questype:this.state.Questype,
+      Questype: this.state.Questype,
       A: this.state.A,
       B: this.state.B,
       C: this.state.C,
@@ -302,7 +305,7 @@ class AddQuiz extends React.Component {
                     </FormGroup>
                   </Col>
                 </Row>
-                <Row className={this.state.Questype?"d-none":""}>
+                <Row className={this.state.Questype ? "d-none" : ""}>
                   <Col className="pr-md-1" md="6">
                     <FormGroup>
                       <label>A</label>
@@ -529,154 +532,156 @@ class AddQuiz extends React.Component {
                     </FormGroup>
                   </Col>
                 </Row>
-                
+
                 <Row>
                   <Col md="12">
                     <UncontrolledDropdown setActiveFromChild>
-                        <DropdownToggle className="btn-fill w-100 m-0" caret>
-                          {this.state.Questype}
-                        </DropdownToggle>
-                        <DropdownMenu className="bg-dark text-white">
-                          <DropdownItem
-                            onClick={() => this.setState({ Questype: false })}
-                            className={
-                              this.state.Questype
-                                ? "active text-white"
-                                : "text-white"
-                            }
-                          >
-                            Multi-choice
-                          </DropdownItem>
-                          <DropdownItem
-                            onClick={() => this.setState({ Questype: true })}
-                            className={
-                              this.state.Questype
-                                ? "active text-white"
-                                : "text-white"
-                            }
-                          >
-                            Description
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
+                      <DropdownToggle className="btn-fill w-100 m-0" caret>
+                        {this.state.Questype ? "Descriptive" : "Multi-choice"}
+                      </DropdownToggle>
+                      <DropdownMenu className="bg-dark text-white">
+                        <DropdownItem
+                          onClick={() => this.setState({ Questype: false })}
+                          className={
+                            this.state.Questype
+                              ? "active text-white"
+                              : "text-white"
+                          }
+                        >
+                          Multi-choice
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={() => this.setState({ Questype: true })}
+                          className={
+                            this.state.Questype
+                              ? "active text-white"
+                              : "text-white"
+                          }
+                        >
+                          Descriptive
+                        </DropdownItem>
+                      </DropdownMenu>
+                    </UncontrolledDropdown>
                   </Col>
                 </Row>
-                <Row>
-                  <Col className="pr-md-1" md="6">
-                    <FormGroup>
-                      <label>A</label>
-                      <Input
-                        defaultValue={this.state.A}
-                        placeholder="A"
-                        type="text"
-                        className="text-dark"
-                        onChange={(e) => {
-                          this.setState({ A: e.target.value });
-                        }}
-                      />
-                    </FormGroup>
-                  </Col>
+                <div className={this.state.Questype ? "d-none" : ""}>
+                  <Row>
+                    <Col className="pr-md-1" md="6">
+                      <FormGroup>
+                        <label>A</label>
+                        <Input
+                          defaultValue={this.state.A}
+                          placeholder="A"
+                          type="text"
+                          className="text-dark"
+                          onChange={(e) => {
+                            this.setState({ A: e.target.value });
+                          }}
+                        />
+                      </FormGroup>
+                    </Col>
 
-                  <Col className="pl-md-1" md="6">
-                    <FormGroup>
-                      <label>B</label>
-                      <Input
-                        defaultValue={this.state.B}
-                        placeholder="B"
-                        type="text"
-                        className="text-dark"
-                        onChange={(e) => {
-                          this.setState({ B: e.target.value });
-                        }}
-                      />
-                    </FormGroup>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="pr-md-1" md="6">
-                    <FormGroup>
-                      <label>C</label>
-                      <Input
-                        defaultValue={this.state.C}
-                        placeholder="C"
-                        type="text"
-                        className="text-dark"
-                        onChange={(e) => {
-                          this.setState({ C: e.target.value });
-                        }}
-                      />
-                    </FormGroup>
-                  </Col>
+                    <Col className="pl-md-1" md="6">
+                      <FormGroup>
+                        <label>B</label>
+                        <Input
+                          defaultValue={this.state.B}
+                          placeholder="B"
+                          type="text"
+                          className="text-dark"
+                          onChange={(e) => {
+                            this.setState({ B: e.target.value });
+                          }}
+                        />
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col className="pr-md-1" md="6">
+                      <FormGroup>
+                        <label>C</label>
+                        <Input
+                          defaultValue={this.state.C}
+                          placeholder="C"
+                          type="text"
+                          className="text-dark"
+                          onChange={(e) => {
+                            this.setState({ C: e.target.value });
+                          }}
+                        />
+                      </FormGroup>
+                    </Col>
 
-                  <Col className="pl-md-1" md="6">
-                    <FormGroup>
-                      <label>D</label>
-                      <Input
-                        defaultValue={this.state.D}
-                        placeholder="D"
-                        type="text"
-                        className="text-dark"
-                        onChange={(e) => {
-                          this.setState({ D: e.target.value });
-                        }}
-                      />
-                    </FormGroup>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col md="2">
-                    <FormGroup>
-                      <label>Answer</label>
-                      <UncontrolledDropdown setActiveFromChild>
-                        <DropdownToggle className="btn-fill w-100 m-0" caret>
-                          {this.state.Answer}
-                        </DropdownToggle>
-                        <DropdownMenu className="bg-dark text-white">
-                          <DropdownItem
-                            onClick={() => this.setState({ Answer: "A" })}
-                            className={
-                              this.state.Answer.trim() === "A"
-                                ? "active text-white"
-                                : "text-white"
-                            }
-                          >
-                            A
-                          </DropdownItem>
-                          <DropdownItem
-                            onClick={() => this.setState({ Answer: "B" })}
-                            className={
-                              this.state.Answer.trim() === "B"
-                                ? "active text-white"
-                                : "text-white"
-                            }
-                          >
-                            B
-                          </DropdownItem>
-                          <DropdownItem
-                            onClick={() => this.setState({ Answer: "C" })}
-                            className={
-                              this.state.Answer.trim() === "C"
-                                ? "active text-white"
-                                : "text-white"
-                            }
-                          >
-                            C
-                          </DropdownItem>
-                          <DropdownItem
-                            onClick={() => this.setState({ Answer: "D" })}
-                            className={
-                              this.state.Answer.trim() === "D"
-                                ? "active text-white"
-                                : "text-white"
-                            }
-                          >
-                            D
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
-                    </FormGroup>
-                  </Col>
-                </Row>
+                    <Col className="pl-md-1" md="6">
+                      <FormGroup>
+                        <label>D</label>
+                        <Input
+                          defaultValue={this.state.D}
+                          placeholder="D"
+                          type="text"
+                          className="text-dark"
+                          onChange={(e) => {
+                            this.setState({ D: e.target.value });
+                          }}
+                        />
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md="2">
+                      <FormGroup>
+                        <label>Answer</label>
+                        <UncontrolledDropdown setActiveFromChild>
+                          <DropdownToggle className="btn-fill w-100 m-0" caret>
+                            {this.state.Answer}
+                          </DropdownToggle>
+                          <DropdownMenu className="bg-dark text-white">
+                            <DropdownItem
+                              onClick={() => this.setState({ Answer: "A" })}
+                              className={
+                                this.state.Answer.trim() === "A"
+                                  ? "active text-white"
+                                  : "text-white"
+                              }
+                            >
+                              A
+                            </DropdownItem>
+                            <DropdownItem
+                              onClick={() => this.setState({ Answer: "B" })}
+                              className={
+                                this.state.Answer.trim() === "B"
+                                  ? "active text-white"
+                                  : "text-white"
+                              }
+                            >
+                              B
+                            </DropdownItem>
+                            <DropdownItem
+                              onClick={() => this.setState({ Answer: "C" })}
+                              className={
+                                this.state.Answer.trim() === "C"
+                                  ? "active text-white"
+                                  : "text-white"
+                              }
+                            >
+                              C
+                            </DropdownItem>
+                            <DropdownItem
+                              onClick={() => this.setState({ Answer: "D" })}
+                              className={
+                                this.state.Answer.trim() === "D"
+                                  ? "active text-white"
+                                  : "text-white"
+                              }
+                            >
+                              D
+                            </DropdownItem>
+                          </DropdownMenu>
+                        </UncontrolledDropdown>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                </div>
               </Form>
             </ModalBody>
             <ModalFooter>

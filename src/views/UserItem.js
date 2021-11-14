@@ -16,6 +16,7 @@ import {
 const QuestionItem = (props) => {
   console.log(props.main);
   const [modal, setModal] = useState(false);
+  const [ques, setQues] = useState(1);
   const toggle = () => setModal(!modal);
   const allow = async (e) => {
     var UserRef = await firebase
@@ -27,7 +28,7 @@ const QuestionItem = (props) => {
     UserRef.update({
       Status: "Logged",
     });
-    toggle()
+    toggle();
     props.notify("tc", "User Allowed.", "success", "icon-check-2");
   };
   return (
@@ -64,7 +65,7 @@ const QuestionItem = (props) => {
                 </FormGroup>
               </Col>
             </Row>
-            
+
             <Row>
               <Col md="12">
                 <FormGroup>
@@ -172,6 +173,55 @@ const QuestionItem = (props) => {
                       .toString()
                       .slice(15)}
                     placeholder="Time"
+                    type="text"
+                    className="text-dark bg-transparent"
+                    disabled
+                  />
+                </FormGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col md="6">
+                <FormGroup>
+                  <Row>
+                    <Col>
+                      <label>Answer:</label>
+                    </Col>
+                    <Col>
+                      <Input
+                        defaultValue={ques}
+                        placeholder="Question no."
+                        type="number"
+                        min="1"
+                        max={props.main.Answers.length}
+                        className="text-dark bg-transparent"
+                        onChange={(e) => {
+                          setQues(e.target.value);
+                        }}
+                      />
+                    </Col>
+                  </Row>
+                </FormGroup>
+              </Col>
+            </Row>
+
+            <Row>
+              <Col md="6">
+                <FormGroup>
+                  <Input
+                    value={props.main.Answers[ques - 1].givenAnswer}
+                    placeholder="Answer"
+                    type="text"
+                    className="text-dark bg-transparent"
+                    disabled
+                  />
+                </FormGroup>
+              </Col>
+              <Col md="6"> 
+                <FormGroup>
+                  <Input
+                    value={props.main.Answers[ques - 1].Answer}
+                    placeholder="Answer"
                     type="text"
                     className="text-dark bg-transparent"
                     disabled
