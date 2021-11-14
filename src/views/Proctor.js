@@ -22,7 +22,7 @@ import {
 import { Redirect } from "react-router-dom";
 import Fullscreen from "react-fullscreen-crossbrowser";
 let tmp = {};
-let warn=3;
+let warn = 3;
 let id;
 let answers = [];
 let timer = 0;
@@ -49,6 +49,8 @@ class Proctor extends React.Component {
       activeQuestion: 1,
       getEmail: true,
       userEmail: "",
+      userName: "",
+      userNum: "",
       isEmpty: true,
       isLoading: true,
     };
@@ -71,6 +73,7 @@ class Proctor extends React.Component {
     window.$notifications.push([message, "", icon]);
   };
   async componentDidMount() {
+    warn = 3;
     answers = [];
     id = this.props.match.params.id;
     await fetch(
@@ -230,6 +233,8 @@ class Proctor extends React.Component {
           .ref("Quiz/" + id + "/Users/")
           .child(this.state.userEmail.replaceAll(".", ")"))
           .update({
+            Name: this.state.userName,
+            Number: this.state.userNum,
             Status: "Logged",
             email: this.state.userEmail,
             Score: this.state.Score,
@@ -255,6 +260,8 @@ class Proctor extends React.Component {
       .ref("Quiz/" + id + "/Users/")
       .child(this.state.userEmail.replaceAll(".", ")"))
       .update({
+        Name: this.state.userName,
+        Number: this.state.userNum,
         Score: this.state.Score,
         Status: "Completed",
         Answers: answers,
@@ -268,6 +275,8 @@ class Proctor extends React.Component {
       .ref("Quiz/" + id + "/Users/")
       .child(this.state.userEmail.replaceAll(".", ")"))
       .update({
+        Name: this.state.userName,
+        Number: this.state.userNum,
         Score: this.state.Score,
         Status: "Disqualified",
         Answers: answers,
@@ -385,17 +394,17 @@ class Proctor extends React.Component {
     ) {
       // console.log("Full");
     } else {
-      if (!this.state.getEmail){
-        warn-=1;
-        this.setState({screenFull:true});
+      if (!this.state.getEmail) {
+        warn -= 1;
+        this.setState({ screenFull: true });
         this.notify(
           "tc",
-          "This action is not allowed. Warnings left:"+warn,
+          "This action is not allowed. Warnings left:" + warn,
           "danger",
           "icon-simple-remove"
         );
       }
-      if (!this.state.getEmail && warn<=0) {
+      if (!this.state.getEmail && warn <= 0) {
         this.disqualify();
         return (
           <Redirect
@@ -484,17 +493,62 @@ class Proctor extends React.Component {
                   <div className={this.state.getEmail ? "d-auto" : "d-none"}>
                     <CardBody>
                       <FormGroup>
-                        <Input
-                          defaultValue=""
-                          placeholder="Enter your email here"
-                          bsSize="lg"
-                          type="text"
-                          className={this.state.getOtp ? "d-none" : "rounded"}
-                          onChange={(e) => {
-                            this.setState({ userEmail: e.target.value.trim() });
-                          }}
-                          required
-                        />
+                        <Row className="mb-3">
+                          <Col md="6">
+                            <Input
+                              defaultValue=""
+                              placeholder="Enter your name here"
+                              bsSize="lg"
+                              type="text"
+                              className={
+                                this.state.getOtp ? "d-none" : "rounded"
+                              }
+                              onChange={(e) => {
+                                this.setState({
+                                  userName: e.target.value.trim(),
+                                });
+                              }}
+                              required
+                            />
+                          </Col>
+
+                          <Col md="6">
+                            <Input
+                              defaultValue=""
+                              placeholder="Enter your mobile no. here"
+                              bsSize="lg"
+                              type="number"
+                              className={
+                                this.state.getOtp ? "d-none" : "rounded"
+                              }
+                              onChange={(e) => {
+                                this.setState({
+                                  userNum: e.target.value.trim(),
+                                });
+                              }}
+                              required
+                            />
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col md="12">
+                            <Input
+                              defaultValue=""
+                              placeholder="Enter your email here"
+                              bsSize="lg"
+                              type="text"
+                              className={
+                                this.state.getOtp ? "d-none" : "rounded"
+                              }
+                              onChange={(e) => {
+                                this.setState({
+                                  userEmail: e.target.value.trim(),
+                                });
+                              }}
+                              required
+                            />
+                          </Col>
+                        </Row>
                         <Input
                           defaultValue=""
                           placeholder="Enter your OTP here"

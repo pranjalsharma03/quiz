@@ -14,6 +14,7 @@ import {
 } from "reactstrap";
 
 const QuestionItem = (props) => {
+  console.log(props.main);
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
   const allow = async (e) => {
@@ -37,6 +38,33 @@ const QuestionItem = (props) => {
         </ModalHeader>
         <ModalBody>
           <Form>
+            <Row>
+              <Col md="6">
+                <FormGroup>
+                  <label>Name:</label>
+                  <Input
+                    defaultValue={props.main.Name}
+                    placeholder="Name"
+                    type="text"
+                    className="text-dark bg-transparent"
+                    disabled
+                  />
+                </FormGroup>
+              </Col>
+              <Col md="6">
+                <FormGroup>
+                  <label>Number:</label>
+                  <Input
+                    defaultValue={props.main.Number}
+                    placeholder="Number"
+                    type="number"
+                    className="text-dark bg-transparent"
+                    disabled
+                  />
+                </FormGroup>
+              </Col>
+            </Row>
+            
             <Row>
               <Col md="12">
                 <FormGroup>
