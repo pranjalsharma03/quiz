@@ -71,6 +71,7 @@ class AddQuiz extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      Questype:false,
       toggle: false,
       Ques: "",
       Answer: "_",
@@ -206,6 +207,7 @@ class AddQuiz extends React.Component {
         data[eachData].index = i;
         this.state.Question.push({
           Question: data[eachData].Question,
+          Questype: data[eachData].Questype,
           index: data[eachData].index,
           Answer: data[eachData].Answer,
           A: data[eachData].A,
@@ -223,6 +225,7 @@ class AddQuiz extends React.Component {
     let length = this.state.Question.length;
     this.state.Question.push({
       Question: this.state.Ques,
+      Questype:this.state.Questype,
       A: this.state.A,
       B: this.state.B,
       C: this.state.C,
@@ -299,7 +302,7 @@ class AddQuiz extends React.Component {
                     </FormGroup>
                   </Col>
                 </Row>
-                <Row>
+                <Row className={this.state.Questype?"d-none":""}>
                   <Col className="pr-md-1" md="6">
                     <FormGroup>
                       <label>A</label>
@@ -524,6 +527,38 @@ class AddQuiz extends React.Component {
                         }}
                       />
                     </FormGroup>
+                  </Col>
+                </Row>
+                
+                <Row>
+                  <Col md="12">
+                    <UncontrolledDropdown setActiveFromChild>
+                        <DropdownToggle className="btn-fill w-100 m-0" caret>
+                          {this.state.Questype}
+                        </DropdownToggle>
+                        <DropdownMenu className="bg-dark text-white">
+                          <DropdownItem
+                            onClick={() => this.setState({ Questype: false })}
+                            className={
+                              this.state.Questype
+                                ? "active text-white"
+                                : "text-white"
+                            }
+                          >
+                            Multi-choice
+                          </DropdownItem>
+                          <DropdownItem
+                            onClick={() => this.setState({ Questype: true })}
+                            className={
+                              this.state.Questype
+                                ? "active text-white"
+                                : "text-white"
+                            }
+                          >
+                            Description
+                          </DropdownItem>
+                        </DropdownMenu>
+                      </UncontrolledDropdown>
                   </Col>
                 </Row>
                 <Row>

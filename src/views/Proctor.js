@@ -31,6 +31,7 @@ class Proctor extends React.Component {
     super();
     this.state = {
       otp: "",
+      desans: "",
       userOtp: "",
       otpTimer: 60,
       getOtp: false,
@@ -226,7 +227,7 @@ class Proctor extends React.Component {
           this.state.userEmail.replaceAll(".", ")")
         ) ||
         this.state.users[this.state.userEmail.replaceAll(".", ")")].Status ===
-          "Logged"
+        "Logged"
       ) {
         await firebase
           .database()
@@ -479,7 +480,7 @@ class Proctor extends React.Component {
                         <CardTitle
                           className={
                             this.state.getEmail ||
-                            this.state.timerType === "None"
+                              this.state.timerType === "None"
                               ? "text-right d-none"
                               : "text-right"
                           }
@@ -615,7 +616,25 @@ class Proctor extends React.Component {
                         }
                       </h3>
                       <Form className="mx-5" id="quiz-form">
-                        <FormGroup>
+                        <FormGroup className={this.state.questions[this.state.activeQuestion - 1]
+                          .Questype ? "" : "d-none"}>
+
+                          <Input
+                            cols="80"
+                            required
+                            rows="4"
+                            type="textarea"
+                            placeholder="Enter your answer here..."
+                            autoCompleteType="desans"
+                            placeholderTextColor="#000"
+                            autoCapitalize="none"
+                            onChange={(desans) =>
+                              this.setState({ desans: desans.target.value })
+                            }
+                          />
+                        </FormGroup>
+                        <FormGroup className={this.state.questions[this.state.activeQuestion - 1]
+                          .Questype ? "d-none" : ""} >
                           <Input
                             type="radio"
                             onChange={(e) => {
