@@ -217,13 +217,21 @@ const QuestionItem = (props) => {
                   />
                 </FormGroup>
               </Col>
-              <Col md="6"> 
+              <Col md="6">
                 <FormGroup>
                   <Input
                     value={props.main.Answers[ques - 1].Answer}
                     placeholder="Answer"
                     type="text"
-                    className="text-dark bg-transparent"
+                    className={
+                      props.main.Answers[ques - 1].Answer === "S" ||
+                      props.main.Answers[ques - 1].Answer === "A" ||
+                      props.main.Answers[ques - 1].Answer === "B" ||
+                      props.main.Answers[ques - 1].Answer === "C" ||
+                      props.main.Answers[ques - 1].Answer === "D"
+                        ? "text-dark bg-transparent"
+                        : "d-none"
+                    }
                     disabled
                   />
                 </FormGroup>

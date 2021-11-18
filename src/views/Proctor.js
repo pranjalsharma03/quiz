@@ -625,12 +625,11 @@ class Proctor extends React.Component {
                             rows="4"
                             type="textarea"
                             placeholder="Enter your answer here..."
-                            autoCompleteType="desans"
                             placeholderTextColor="#000"
                             autoCapitalize="none"
-                            onChange={(desans) =>
-                              this.setState({ desans: desans.target.value })
-                            }
+                            onChange={(e) => {
+                              this.answer(e);
+                            }}
                           />
                         </FormGroup>
                         <FormGroup className={this.state.questions[this.state.activeQuestion - 1]
