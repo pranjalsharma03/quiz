@@ -816,9 +816,9 @@ class Proctor extends React.Component {
                       <li>
                         In case of any issue / problem,{" "}
                         <span className="text-success">
-                          contact the invigilator<br></br>
+                          contact the invigilator
                         </span>
-                        via chatbot or email:{" "}
+                            via chatbot or email:{" "}
                         <span className="text-success">
                           {this.state.invigilator}
                         </span>
