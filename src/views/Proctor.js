@@ -818,7 +818,7 @@ class Proctor extends React.Component {
                         <span className="text-success">
                           contact the invigilator
                         </span>
-                        via email:{" "}
+                        via chatbot or email:{" "}
                         <span className="text-success">
                           {this.state.invigilator}
                         </span>
