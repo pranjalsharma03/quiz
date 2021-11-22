@@ -241,7 +241,7 @@ class Login extends React.Component {
             <Card className="m-auto">
               <CardBody className="px-lg-5 py-lg-5 text-center">
                 <div className="text-center text-muted mb-4">
-                  <img src={logo} style={{ width: "4rem" }} alt="Quiz Yaar" />
+                  <img src={logo} style={{ width: "4rem" }} alt="Code Jobma" />
                 </div>
                 <Form role="form">
                   <FormGroup className="mb-3">
