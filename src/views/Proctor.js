@@ -761,9 +761,6 @@ class Proctor extends React.Component {
                       <li>
                         <span className="text-warning">This test consist of Warnings, 
                         the max numberof warning is </span>  {" "} 
-                        <span className="text-success">
-                          {this.state.warning.length}
-                          </span>
                         , after that you will be <span className="text-warning"> 
                         disqualified!!! </span>
                       </li>
