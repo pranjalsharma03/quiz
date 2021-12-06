@@ -59,7 +59,7 @@ class AuthNavbar extends React.Component {
                 onClick={(e) => e.preventDefault()}
               >
                 <Link to="/auth/home">
-                  <img src={logo} width="50rem" alt="Code Jobma" />
+                  <img src={logo} width="50rem" alt="Quiz Yaar" />
                 </Link>
               </NavbarBrand>
             </div>

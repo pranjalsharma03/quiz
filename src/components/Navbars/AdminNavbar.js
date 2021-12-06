@@ -91,7 +91,7 @@ class AdminNavbar extends React.Component {
                 onClick={(e) => e.preventDefault()}
               >
                 <Link to="/admin/quiz">
-                  <img src={logo} width="50rem" alt="Code Jobma" />
+                  <img src={logo} width="50rem" alt="Quiz Yaar" />
                 </Link>
               </NavbarBrand>
             </div>

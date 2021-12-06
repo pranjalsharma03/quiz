@@ -140,7 +140,7 @@ class Contact extends React.Component {
               <Card className="m-auto">
                 <CardBody className="px-lg-5 py-lg-5 text-center">
                   {/* <div className="text-center text-muted mb-4">
-                    <img src={logo} style={{ width: "4rem" }} alt="Code Jobma" />
+                    <img src={logo} style={{ width: "4rem" }} alt="Quiz Yaar" />
                   </div> */}
                   <h3 className="mb-4 text-primary">Send us a message</h3>
                   <FormGroup className="mb-3 input-glow">

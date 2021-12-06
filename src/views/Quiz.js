@@ -232,7 +232,7 @@ class Quiz extends React.Component {
               <Row className="mt-4">
                 <EmailShareButton
                   className="mx-auto"
-                  subject="Code Jobma"
+                  subject="Quiz Yaar"
                   body={
                     "You have been invited by " +
                     this.state.userEmail +
@@ -247,7 +247,7 @@ class Quiz extends React.Component {
                   <EmailIcon size={32} round={true} />
                 </EmailShareButton>
                 <LinkedinShareButton
-                  source="Code Jobma"
+                  source="Quiz Yaar"
                   className="mx-auto"
                   url={
                     "https://quiz-yaar.vercel.app/auth/proctor/" +
@@ -258,7 +258,7 @@ class Quiz extends React.Component {
                 </LinkedinShareButton>
                 <TelegramShareButton
                   className="mx-auto"
-                  title="Code Jobma"
+                  title="Quiz Yaar"
                   url={
                     "https://quiz-yaar.vercel.app/auth/proctor/" +
                     this.state.Active
@@ -267,7 +267,7 @@ class Quiz extends React.Component {
                   <TelegramIcon size={32} round={true} />
                 </TelegramShareButton>
                 <TwitterShareButton
-                  title="Code Jobma"
+                  title="Quiz Yaar"
                   hashtags={["quizyaar", "quiz"]}
                   className="mx-auto"
                   url={
@@ -278,7 +278,7 @@ class Quiz extends React.Component {
                   <TwitterIcon size={32} round={true} />
                 </TwitterShareButton>
                 <WhatsappShareButton
-                  title="Code Jobma"
+                  title="Quiz Yaar"
                   separator=" "
                   className="mx-auto"
                   url={
