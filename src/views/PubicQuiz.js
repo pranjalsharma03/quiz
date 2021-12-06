@@ -198,7 +198,7 @@ class PublicQuiz extends React.Component {
           </Row>
           <Row>
             <Col md="3" className="text-right d-none d-md-block ">
-              <img src={logo} alt="Code Jobma" width={100} height={100} />
+              <img src={logo} alt="Quiz Yaar" width={100} height={100} />
             </Col>
             <Col md="9">
               <h3 className="text-light text-center text-lg-left my-auto">
